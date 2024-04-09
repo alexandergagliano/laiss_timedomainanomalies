@@ -180,7 +180,7 @@ def LAISS(l_or_ztfid_ref, lc_features, host_features=[], n=8, use_lc_for_ann_onl
 
         except:
             print(f"{l_or_ztfid_ref} is not in dataset_bank. Checking if made before...")
-            if os.path.exists(f"./timeseries/{ztfid_ref}_timeseries.csv"):
+            if os.path.exists(f"../timeseries/{ztfid_ref}_timeseries.csv"):
                 print(f'{ztfid_ref} is already made. Continue!\n')
             else:
                 print("Re-extracting features")
@@ -192,7 +192,7 @@ def LAISS(l_or_ztfid_ref, lc_features, host_features=[], n=8, use_lc_for_ann_onl
                     extract_lc_and_host_features(ztf_id_ref=ztfid_ref, use_lc_for_ann_only_bool=use_lc_for_ann_only_bool, show_lc=False, show_host=True)
 
             try:
-                lc_and_hosts_df = pd.read_csv(f'./timeseries/{ztfid_ref}_timeseries.csv')
+                lc_and_hosts_df = pd.read_csv(f'../timeseries/{ztfid_ref}_timeseries.csv')
             except:
                 print(f"couldn't feature space as func of time for {ztfid_ref}. pass.")
                 return
@@ -226,7 +226,7 @@ def LAISS(l_or_ztfid_ref, lc_features, host_features=[], n=8, use_lc_for_ann_onl
 
         except:
             print(f"{l_or_ztfid_ref} is not in dataset_bank. Checking if made before...")
-            if os.path.exists(f"./timeseries/{l_or_ztfid_ref}_timeseries.csv"):
+            if os.path.exists(f"../timeseries/{l_or_ztfid_ref}_timeseries.csv"):
                 print(f'{l_or_ztfid_ref} is already made. Continue!\n')
 
             else:
@@ -243,7 +243,7 @@ def LAISS(l_or_ztfid_ref, lc_features, host_features=[], n=8, use_lc_for_ann_onl
                 #    return
 
             try:
-                lc_and_hosts_df = pd.read_csv(f'./timeseries/{l_or_ztfid_ref}_timeseries.csv')
+                lc_and_hosts_df = pd.read_csv(f'../timeseries/{l_or_ztfid_ref}_timeseries.csv')
             except:
                 print(f"couldn't feature space as func of time for {l_or_ztfid_ref}. pass.")
                 return
@@ -581,8 +581,8 @@ def LAISS(l_or_ztfid_ref, lc_features, host_features=[], n=8, use_lc_for_ann_onl
         random_state = ad_params['random_state']
         max_features = ad_params['max_features']
 
-        figure_path = f"./cls=binary_n_estimators={n_estimators}_max_depth={max_depth}_rs={random_state}_max_feats={max_features}_cw=balanced/figures"
-        model_path = f"./SMOTE_train_test_70-30_min14_kneighbors8/cls=binary_n_estimators={n_estimators}_max_depth={max_depth}_rs={random_state}_max_feats={max_features}_cw=balanced/model"
+        figure_path = f"../models/cls=binary_n_estimators={n_estimators}_max_depth={max_depth}_rs={random_state}_max_feats={max_features}_cw=balanced/figures"
+        model_path = f"../models/SMOTE_train_test_70-30_min14_kneighbors8/cls=binary_n_estimators={n_estimators}_max_depth={max_depth}_rs={random_state}_max_feats={max_features}_cw=balanced/model"
         if not os.path.exists(figure_path):
             os.makedirs(figure_path)
 
@@ -596,7 +596,7 @@ def LAISS(l_or_ztfid_ref, lc_features, host_features=[], n=8, use_lc_for_ann_onl
         if needs_reextraction_for_AD:
             print("Needs re-extraction for full timeseries.")
             print("Checking if made before...")
-            if os.path.exists(f"./timeseries/{ztfid_ref}_timeseries.csv"):
+            if os.path.exists(f".../timeseries/{ztfid_ref}_timeseries.csv"):
                 print(f'{ztfid_ref} is already made. Continue!\n')
             else:
                 print("Re-extracting LC+HOST features")
@@ -608,7 +608,7 @@ def LAISS(l_or_ztfid_ref, lc_features, host_features=[], n=8, use_lc_for_ann_onl
                     extract_lc_and_host_features(ztf_id_ref=ztfid_ref, use_lc_for_ann_only_bool=use_lc_for_ann_only_bool, show_lc=False, show_host=True, host_features=host_features)
 
             try:
-                lc_and_hosts_df = pd.read_csv(f'./timeseries/{ztfid_ref}_timeseries.csv')
+                lc_and_hosts_df = pd.read_csv(f'../timeseries/{ztfid_ref}_timeseries.csv')
             except:
                 print(f"couldn't feature space as func of time for {ztfid_ref}. pass.")
                 return
