@@ -455,7 +455,7 @@ def extract_lc_and_host_features(ztf_id_ref, use_lc_for_ann_only_bool, show_lc=F
 
 def extract_lc_and_host_features_YSE_snana_format(IAU_name, ztf_id_ref, yse_lightcurve, ra, dec, show_lc=False, show_host=False):
     IAU_name = IAU_name
-    df_path = "./timeseries"
+    df_path = "../timeseries"
 
     min_obs_count=4
 

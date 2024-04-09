@@ -134,13 +134,13 @@ def LAISS(l_or_ztfid_ref, lc_features, host_features=[], n=8, use_lc_for_ann_onl
         print("Using S/N cut of 3...")
         SN_df = SN_df[SN_df.FLUXCAL >= 3*SN_df.FLUXCALERR] # SNR >= 3
 
-    figure_path = f"./LAISS_run/{l_or_ztfid_ref}/figures"
+    figure_path = f"../LAISS_run/{l_or_ztfid_ref}/figures"
     if savefigs:
         if not os.path.exists(figure_path):
             print(f"Making figures directory {figure_path}")
             os.makedirs(figure_path)
 
-    table_path = f"./LAISS_run/{l_or_ztfid_ref}/tables"
+    table_path = f"../LAISS_run/{l_or_ztfid_ref}/tables"
     if savetables:
         if not os.path.exists(table_path):
             print(f"Making tables directory {table_path}")
@@ -344,11 +344,11 @@ def LAISS(l_or_ztfid_ref, lc_features, host_features=[], n=8, use_lc_for_ann_onl
         #index_nm = "dataset_bank_LCfeats_only_annoy_index" #5k, 1000 trees
         #index_file = "../dataset_bank_LCfeats_only_annoy_index.ann" #5k, 1000 trees
 
-        #index_nm = "./bigbank_90k_LCfeats_only_annoy_index_100trees" #90k, 100 trees
-        #index_file = "./bigbank_90k_LCfeats_only_annoy_index_100trees.ann" #90k, 100 trees
+        #index_nm = "../bigbank_90k_LCfeats_only_annoy_index_100trees" #90k, 100 trees
+        #index_file = "../bigbank_90k_LCfeats_only_annoy_index_100trees.ann" #90k, 100 trees
 
-        #index_nm = "./" #90k, 1000 trees
-        #index_file = "./bigbank_90k_LCfeats_only_annoy_index_1000trees.ann" #90k, 1000 trees
+        #index_nm = "../" #90k, 1000 trees
+        #index_file = "../bigbank_90k_LCfeats_only_annoy_index_1000trees.ann" #90k, 1000 trees
         index_file = "../data/loci_df_271688objects_cut_stars_and_gal_plane_pcaFalse_hostFalse_annoy_index.ann"
         index_nm = get_base_name(index_file)
         index_dim = 62  # Dimension of the index
