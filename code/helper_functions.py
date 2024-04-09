@@ -413,11 +413,11 @@ def extract_lc_and_host_features(ztf_id_ref, use_lc_for_ann_only_bool, show_lc=F
         snCoord = [SkyCoord(ra*u.deg, dec*u.deg, frame='icrs'), SkyCoord(ra*u.deg, dec*u.deg, frame='icrs')]
         with tempfile.TemporaryDirectory() as tmp:
             try:
-                hosts = getTransientHosts_with_timeout(transientName=snName, snCoord=snCoord, GLADE=True, verbose=0,
+                hosts = getTransientHosts_with_timeout(transientName=snName, transientCoord=transientCoord, GLADE=True, verbose=0,
                                       starcut='gentle', ascentMatch=False, savepath=tmp, redo_search=False)
             except:
                 print(f"GHOST error for {ztf_id_ref}. Retry without GLADE. \n")
-                hosts = getTransientHosts_with_timeout(transientName=snName, snCoord=snCoord, GLADE=False, verbose=0,
+                hosts = getTransientHosts_with_timeout(transientName=snName, transientCoord=snCoord, GLADE=False, verbose=0,
                                       starcut='gentle', ascentMatch=False, savepath=tmp, redo_search=False)
 
         if len(hosts) > 1:
