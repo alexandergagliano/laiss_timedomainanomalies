@@ -10,6 +10,8 @@ import antares_client
 from astropy.table import MaskedColumn
 from itertools import chain
 from astropy.coordinates import SkyCoord
+from PIL import Image
+from astropy.io import fits
 import astropy.units as u
 import os
 import tempfile
