@@ -2,6 +2,7 @@ import astro_ghost
 from astro_ghost.ghostHelperFunctions import getGHOST
 import light_curve as lc
 import numpy as np
+import math
 import pandas as pd
 from pathlib import Path
 import time
